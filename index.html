@@ -16,16 +16,10 @@
       </div>
     </header>
     <main class="home-cards">
-      <button class="home-card" onclick="openHouse('farm-house')">
-        <div class="card-thumb">
-          <img src="assets/farm-house.png" alt="Farm House">
-        </div>
+      <button class="home-card" onclick="openHouse('farm-house')" style="background-image: url('assets/farm-house.png')">
         <h2>Farm House</h2>
       </button>
-      <button class="home-card" onclick="openHouse('16-north-rd')">
-        <div class="card-thumb">
-          <img src="assets/16-north-rd.png" alt="16 North Rd">
-        </div>
+      <button class="home-card" onclick="openHouse('16-north-rd')" style="background-image: url('assets/16-north-rd.png')">
         <h2>16 North Rd</h2>
       </button>
     </main>
@@ -43,8 +37,10 @@
       <h1 id="house-title"></h1>
     </header>
 
+    <nav class="cadence-tabs" id="cadence-tabs"></nav>
+
     <div class="progress-bar-container">
-      <div class="progress-text" id="progress-text">0 of 0 tasks complete</div>
+      <div class="progress-text" id="progress-text">0 of 0 complete</div>
       <div class="progress-track">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -54,7 +50,7 @@
 
     <div class="reset-container">
       <button class="reset-btn" onclick="resetChecklist()">
-        <span>&#8635;</span> Reset Checklist
+        <span>&#8635;</span> Reset
       </button>
     </div>
   </div>
