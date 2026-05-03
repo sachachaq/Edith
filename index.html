@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edith — Housekeeper Checklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing" class="page active">
+    <header class="landing-header">
+      <div class="logo">
+        <span class="logo-icon">&#127793;</span>
+        <h1>Edith</h1>
+        <p class="subtitle">Housekeeper Checklist</p>
+      </div>
+    </header>
+    <main class="home-cards">
+      <button class="home-card" onclick="openHouse('farm-house')">
+        <div class="card-icon">&#127806;</div>
+        <h2>Farm House</h2>
+        <p class="card-hint">Tap to open checklist</p>
+      </button>
+      <button class="home-card" onclick="openHouse('16-north-rd')">
+        <div class="card-icon">&#127968;</div>
+        <h2>16 North Rd</h2>
+        <p class="card-hint">Tap to open checklist</p>
+      </button>
+    </main>
+    <footer class="landing-footer">
+      <p>&copy; 2026 Edith</p>
+    </footer>
+  </div>
+
+  <!-- Checklist Page -->
+  <div id="checklist" class="page">
+    <header class="checklist-header">
+      <button class="back-btn" onclick="goHome()" aria-label="Back to homes">
+        <span class="back-arrow">&larr;</span> Back
+      </button>
+      <h1 id="house-title"></h1>
+    </header>
+
+    <div class="progress-bar-container">
+      <div class="progress-text" id="progress-text">0 of 0 tasks complete</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <main class="checklist-body" id="checklist-body"></main>
+
+    <div class="reset-container">
+      <button class="reset-btn" onclick="resetChecklist()">
+        <span>&#8635;</span> Reset Checklist
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
