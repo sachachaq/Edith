@@ -94,74 +94,89 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding: 1rem 1.5rem 2rem;
-  max-width: 480px;
+  max-width: 540px;
   margin: 0 auto;
   width: 100%;
 }
 
 .home-card {
   width: 100%;
-  background: linear-gradient(145deg, #ffffff, var(--cream-dark));
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  text-align: center;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(58, 54, 50, 0.12);
   font-family: inherit;
   color: inherit;
   position: relative;
   overflow: hidden;
+  padding: 0;
+  background: none;
 }
 
-.home-card::before {
-  content: '';
+/* ─── Image Cards ─── */
+.image-card {
+  aspect-ratio: 16 / 10;
+}
+
+.card-bg {
   position: absolute;
-  top: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 18, 15, 0.65) 0%,
+    rgba(20, 18, 15, 0.2) 50%,
+    rgba(20, 18, 15, 0.05) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--green-soft), var(--blue-dusty));
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  padding: 1.5rem;
+  z-index: 2;
+}
+
+.image-card h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .home-card:hover,
 .home-card:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
-  border-color: var(--green-soft);
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(58, 54, 50, 0.18);
 }
 
-.home-card:hover::before,
-.home-card:focus-visible::before {
-  opacity: 1;
+.home-card:hover .card-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(20, 18, 15, 0.7) 0%,
+    rgba(20, 18, 15, 0.25) 50%,
+    rgba(20, 18, 15, 0.08) 100%
+  );
 }
 
 .home-card:active {
-  transform: translateY(-1px);
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.home-card h2 {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.25rem;
-}
-
-.card-hint {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  letter-spacing: 0.02em;
+  transform: scale(1.01);
 }
 
 /* ─── Landing Footer ─── */
@@ -422,11 +437,12 @@ body {
 @media (min-width: 600px) {
   .home-cards {
     flex-direction: row;
-    max-width: 640px;
+    max-width: 800px;
+    gap: 1.75rem;
   }
 
-  .home-card {
-    padding: 2.5rem 2rem;
+  .image-card {
+    aspect-ratio: 3 / 4;
   }
 
   .checklist-header {
